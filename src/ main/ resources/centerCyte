@@ -1,0 +1,61 @@
+/*function plusProdjec() {
+    list=document.getElementById("ol_table");
+    div = document.createElement("div");
+    button=document.createElement("button");
+    h2 = document.createElement("input");
+    h2.setAttribute("value","Название проекта");
+    button.appendChild(document.createTextNode("vod"));
+    //button.setAttribute("onclick", "console.log(1)");
+    button.setAttribute("class", "btn btn-primary btn-sm");
+
+    div.appendChild(h2);
+    div.appendChild(button);
+    div.setAttribute("class", "alert alert-primary")
+    li=document.createElement("li");
+    li.appendChild(div);
+    list.appendChild(li);
+}*/
+
+function addprodject() {
+    list=document.getElementById("ol_table");
+    li=document.createElement("li");
+    div1 = document.createElement("div");
+    div2 = document.createElement("div");
+    input=document.createElement("input");
+    a1=document.createElement("a");
+    a2=document.createElement("a");
+
+    div1.setAttribute("class", "input-group mb-3");
+    input.setAttribute("class", "form-control");
+    input.setAttribute("placeholder", "Название пректа");
+    div2.setAttribute("class", "input-group-append");
+    a1.appendChild(document.createTextNode("Ввод"));
+    a1.setAttribute("class", "input-group-text");
+    a1.setAttribute("href", "123.html");
+    a2.appendChild(document.createTextNode("Результат"));
+    a2.setAttribute("class", "input-group-text");
+    a2.setAttribute("href", "resultProject.html");
+    div2.appendChild(a1);
+    div2.appendChild(a2);
+    div1.appendChild(input);
+    div1.appendChild(div2);
+    li.appendChild(div1);
+    list.appendChild(li);
+}
+
+const uri = "/planinfo";
+
+$(document).ready(function () {
+    getData();
+});
+//сделай ajax
+function getData() {
+    $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        url: uri,
+        success: function (projecs) {
+
+        }
+    });
+}
